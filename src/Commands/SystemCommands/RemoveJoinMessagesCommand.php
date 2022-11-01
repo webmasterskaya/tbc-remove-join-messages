@@ -27,12 +27,6 @@ class RemoveJoinMessagesCommand extends SystemCommand
 	{
 		$message = $this->getMessage();
 
-		ob_start();
-		echo "<pre>";
-		var_dump($message);
-		echo "</pre>";
-		$this->replyToChat(ob_get_clean());
-
 		if (!!$message->getNewChatMembers() || !!$message->getLeftChatMember())
 		{
 			return Request::deleteMessage([
