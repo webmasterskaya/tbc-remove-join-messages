@@ -26,14 +26,21 @@ class RemoveJoinMessagesCommand extends SystemCommand
 	public function execute(): ServerResponse
 	{
 		$message = $this->getMessage();
+
 		ob_start();
 		echo "<pre>";
 		var_dump($message);
 		echo "</pre>";
-		$data = ob_get_clean();
-		return Request::sendMessage([
-			'text' => $data,
-			'parse_mode' => 'HTML'
-		]);
+		$this->replyToChat(ob_get_clean());
+
+		if (!!$message->getNewChatMembers() || !!$message->getLeftChatMember())
+		{
+			return Request::deleteMessage([
+				'chat_id'    => $message->getChat()->getId(),
+				'message_id' => $message->getMessageId()
+			]);
+		}
+
+		return Request::emptyResponse();
 	}
 }
