@@ -27,7 +27,7 @@ class RemoveJoinMessagesCommand extends SystemCommand
 	{
 		$message = $this->getMessage();
 
-		if (!!$message->getNewChatMembers() || !!$message->getLeftChatMember())
+		if ($message->getNewChatMembers() || $message->getLeftChatMember())
 		{
 			return Request::deleteMessage([
 				'chat_id'    => $message->getChat()->getId(),
