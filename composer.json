@@ -5,14 +5,16 @@
 	"keywords": [
 		"telegram",
 		"bot",
+		"php",
+		"php telegram bot",
 		"join message",
 		"leave message"
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/webmasterskaya/tbc-remove-join-messages",
+	"homepage": "https://git.webmasterskaya.xyz/tbc/tbc-remove-join-messages",
 	"support": {
-		"issues": "https://github.com/webmasterskaya/tbc-remove-join-messages/issues",
-		"source": "https://github.com/webmasterskaya/tbc-remove-join-messages"
+		"issues": "https://git.webmasterskaya.xyz/tbc/tbc-remove-join-messages/issues",
+		"source": "https://git.webmasterskaya.xyz/tbc/tbc-remove-join-messages"
 	},
 	"authors": [
 		{
@@ -23,8 +25,8 @@
 		}
 	],
 	"require": {
-		"php": "^7.4|^8.0",
-		"longman/telegram-bot": "^0.79.0"
+		"php": "^7.3|^8.0",
+		"longman/telegram-bot": "^0.82.0"
 	},
 	"autoload": {
 		"psr-4": {
